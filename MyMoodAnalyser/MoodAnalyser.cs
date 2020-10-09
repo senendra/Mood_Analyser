@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Text;
 namespace MyMoodAnalyser
 {
-    class MoodAnalyser
+    public class MoodAnalyser
     {
-        private string message;
         public string analyseMood(string message)
         {
-            if (message.Contains("sad"))
+            if (message.Contains("Sad"))
             {
-                return "Sad";
+                return "SAD";
             }
             else
             {
-                return "Happy";
+                return "HAPPY";
             }
         } 
     }

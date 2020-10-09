@@ -1,7 +1,7 @@
 ﻿using System;
 namespace MyMoodAnalyser
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -9,7 +9,7 @@ namespace MyMoodAnalyser
             string message = Console.ReadLine();
             MoodAnalyser checkmood = new MoodAnalyser();
             string result = checkmood.analyseMood(message);
-            Console.WriteLine(result+" Mood");
+            Console.WriteLine(result+" MOOD");
         }
     }
 }
