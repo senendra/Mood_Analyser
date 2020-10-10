@@ -9,11 +9,11 @@ namespace MoodTester
         public void TestMethod1()
         {
             //Arrange
-            string message = "I am in Happy Mood";
+            string message = null;
             string expected = "HAPPY";
             MoodAnalyser mood = new MoodAnalyser(message);
             //Act
-            string result = mood.analyseMood();
+            string result = mood.AnalyseMood();
             //Assert
             Assert.AreEqual(expected, result);
         }
