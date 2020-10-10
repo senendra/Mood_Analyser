@@ -11,9 +11,9 @@ namespace MoodTester
             //Arrange
             string message = "I am in Any Mood";
             string expected = "HAPPY";
-            MoodAnalyser mood = new MoodAnalyser();
+            MoodAnalyser mood = new MoodAnalyser(message);
             //Act
-            string result = mood.analyseMood(message);
+            string result = mood.analyseMood();
             //Assert
             Assert.AreEqual(expected, result);
         }
