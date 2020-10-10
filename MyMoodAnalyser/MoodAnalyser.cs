@@ -28,6 +28,7 @@ namespace MyMoodAnalyser
             }
             catch
             {
+                //Returning Happy when case of Null exception
                 return "HAPPY";
             }
         } 
