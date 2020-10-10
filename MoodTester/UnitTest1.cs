@@ -9,8 +9,8 @@ namespace MoodTester
         public void TestMethod1()
         {
             //Arrange
-            string message = "I am in Sad Mood";
-            string expected = "SAD";
+            string message = "I am in Happy Mood";
+            string expected = "HAPPY";
             MoodAnalyser mood = new MoodAnalyser(message);
             //Act
             string result = mood.analyseMood();
