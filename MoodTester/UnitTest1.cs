@@ -71,7 +71,7 @@ namespace MoodTester
             }
         }
         [TestMethod]
-        public void Given_MoodAnalyser_Class_Name_Should_Return_MoodAnalyser_Object_Using_Parametrized_Constructor()
+        public void GivenMoodAnalyserClassNameShouldReturnMoodAnalyserObjectUsingParametrizedConstructor()
         { 
             //Arrange
             MoodAnalyser expected = new MoodAnalyser("HAPPY");
@@ -79,6 +79,18 @@ namespace MoodTester
             object check = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MyMoodAnalyser.MoodAnalyser", "MoodAnalyser","HAPPY");
             //Assert
             expected.Equals(check);
+        }
+        [TestMethod]
+        public void GivenImproperClassNameShouldReturnNO_SUCH_CLASS()
+        {
+            try
+            {
+                object check = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("My.MoodAnalyser", "MoodAnalyser", "HAPPY");
+            }
+            catch(MoodAnalysisCustomException e)
+            {
+                Assert.AreEqual("Class not found", e.Message);
+            }
         }
     }
 }
