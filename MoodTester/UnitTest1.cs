@@ -58,5 +58,17 @@ namespace MoodTester
                 Assert.AreEqual("Class not found", e.Message);
             }
         }
+        [TestMethod]
+        public void GivenImproperConstructorNameShouldRetrunNo_SUCH_METHOD()
+        {
+            try
+            {
+                object check = MoodAnalyserFactory.CreateMoodAnalyser("MyMoodAnalyser.MoodAnalyser", "Mood");
+            }
+            catch (MoodAnalysisCustomException e)
+            {
+                Assert.AreEqual("Constructor is not found", e.Message);
+            }
+        }
     }
 }
