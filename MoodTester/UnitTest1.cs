@@ -42,7 +42,7 @@ namespace MoodTester
             MoodAnalyser mood = new MoodAnalyser();
             object expected = mood;
             //Act
-            object check = MoodAnalyserFactory.CreateMoodAnalyser("MyMoodAnalyser.MoodAnalyser", "MoodAnalyser");
+            object check = MoodAnalyserRefection.CreateMoodAnalyser("MyMoodAnalyser.MoodAnalyser", "MoodAnalyser");
             //Assert
             expected.Equals(check);
         }
@@ -51,7 +51,7 @@ namespace MoodTester
         {
             try
             {
-                object check = MoodAnalyserFactory.CreateMoodAnalyser("My.MoodAnalyser", "MoodAnalyser");
+                object check = MoodAnalyserRefection.CreateMoodAnalyser("My.MoodAnalyser", "MoodAnalyser");
             }
             catch (MoodAnalysisCustomException e)
             {
@@ -63,7 +63,7 @@ namespace MoodTester
         {
             try
             {
-                object check = MoodAnalyserFactory.CreateMoodAnalyser("MyMoodAnalyser.MoodAnalyser", "Mood");
+                object check = MoodAnalyserRefection.CreateMoodAnalyser("MyMoodAnalyser.MoodAnalyser", "Mood");
             }
             catch (MoodAnalysisCustomException e)
             {
@@ -76,7 +76,7 @@ namespace MoodTester
             //Arrange
             MoodAnalyser expected = new MoodAnalyser("HAPPY");
             //Act
-            object check = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MyMoodAnalyser.MoodAnalyser", "MoodAnalyser","HAPPY");
+            object check = MoodAnalyserRefection.CreateMoodAnalyseUsingParameterizedConstructor("MyMoodAnalyser.MoodAnalyser", "MoodAnalyser","HAPPY");
             //Assert
             expected.Equals(check);
         }
@@ -85,7 +85,7 @@ namespace MoodTester
         {
             try
             {
-                object check = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("My.MoodAnalyser", "MoodAnalyser", "HAPPY");
+                object check = MoodAnalyserRefection.CreateMoodAnalyseUsingParameterizedConstructor("My.MoodAnalyser", "MoodAnalyser", "HAPPY");
             }
             catch(MoodAnalysisCustomException e)
             {
@@ -97,7 +97,7 @@ namespace MoodTester
         {
             try
             {
-                object check = MoodAnalyserFactory.CreateMoodAnalyseUsingParameterizedConstructor("MyMoodAnalyser.MoodAnalyser", "Mood", "HAPPY");
+                object check = MoodAnalyserRefection.CreateMoodAnalyseUsingParameterizedConstructor("MyMoodAnalyser.MoodAnalyser", "Mood", "HAPPY");
             }
             catch (MoodAnalysisCustomException e)
             {

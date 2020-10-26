@@ -5,10 +5,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 namespace MyMoodAnalyser
 {
-    public class MoodAnalyserFactory
+    public class MoodAnalyserRefection
     {
         private string message;
-        public MoodAnalyserFactory(string message)
+        public MoodAnalyserRefection(string message)
         {
             this.message = message;
         }
@@ -55,6 +55,21 @@ namespace MyMoodAnalyser
             {
                 throw new MoodAnalysisCustomException(MoodAnalysisCustomException.ExceptionType.NO_SUCH_CLASS, "Class not found");
 
+            }
+        }
+        public static string InvokeAnalyseMood(string message, string methodName)
+        {
+            try
+            {
+                Type type = Type.GetType("MoodAnalyserProblem.MoodAnalyser");
+                object moodAnalyserObj = MoodAnalyserRefection.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyserProblem.MoodAnalyser", "MoodAnalyser", message);
+                MethodInfo methodInfo = type.GetMethod(methodName);
+                object mood = methodInfo.Invoke(moodAnalyserObj, null);
+                return mood.ToString();
+            }
+            catch (NullReferenceException)
+            {
+                throw new MoodAnalysisCustomException(MoodAnalysisCustomException.ExceptionType.NO_SUCH_METHOD, "no such method.");
             }
         }
     }
