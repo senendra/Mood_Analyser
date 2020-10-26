@@ -45,7 +45,6 @@ namespace MoodTester
             object check = MoodAnalyserFactory.CreateMoodAnalyser("MyMoodAnalyser.MoodAnalyser", "MoodAnalyser");
             //Assert
             expected.Equals(check);
-
         }
     }
 }
