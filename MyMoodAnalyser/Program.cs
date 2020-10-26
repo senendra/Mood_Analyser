@@ -10,7 +10,7 @@ namespace MyMoodAnalyser
             MoodAnalyser checkmood = new MoodAnalyser(message);
             string result = checkmood.AnalyseMood();
             Console.WriteLine(result+" MOOD");
-            Console.ReadLine();
+            MoodAnalyserFactory.CreateMoodAnalyser("MyMoodAnalyser.MoodAnalyser", "MoodAnalyser");
         }
     }
 }
