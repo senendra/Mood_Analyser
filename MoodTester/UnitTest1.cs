@@ -6,7 +6,7 @@ namespace MoodTester
     public class UnitTest1
     {
         [TestMethod]
-        public void TestForNull()
+        public void GivenNullMoo0d()
         {
             try
             {
