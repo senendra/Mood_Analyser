@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 namespace MyMoodAnalyser
 {
-    class MoodAnalysisCustomException : Exception
+    public class MoodAnalysisCustomException : Exception
     {
         public enum ExceptionType
         {

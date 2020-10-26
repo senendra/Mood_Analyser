@@ -6,16 +6,18 @@ namespace MoodTester
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestForNull()
         {
-            //Arrange
-            string message = "I am in any mood";
-            string expected = "HAPPY";
-            MoodAnalyser mood = new MoodAnalyser();
-            //Act
-            string result = mood.AnalyseMood(message);
-            //Assert
-            Assert.AreEqual(expected, result);
+            try
+            {
+                string message = null;
+                MoodAnalyser mood = new MoodAnalyser(message);
+                string result = mood.AnalyseMood();
+            }
+            catch(MoodAnalysisCustomException exception)
+            {
+                Assert.AreEqual("Mood should Not be null", exception.Message);
+            }
         }
     }
 }

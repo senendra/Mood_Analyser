@@ -13,15 +13,19 @@ namespace MyMoodAnalyser
         {
             this.message = message;
         }
+        public string AnalyseMood()
+        {
+            return "";
+        }
         public string AnalyseMood(string message)
         {
             try
             {
-                if(message.Equals(string.Empty))
+                if(this.message.Equals(string.Empty))
                 {
                     throw new MoodAnalysisCustomException(MoodAnalysisCustomException.ExceptionType.EMPTY, "Mood should not be empty");
                 }
-                if (message.Contains("Sad"))
+                if (this.message.Contains("Sad"))
                 {
                     return "SAD";
                 }
