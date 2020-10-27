@@ -13,11 +13,8 @@ namespace MyMoodAnalyser
         {
             this.message = message;
         }
+       
         public string AnalyseMood()
-        {
-            return "";
-        }
-        public string AnalyseMood(string message)
         {
             try
             {

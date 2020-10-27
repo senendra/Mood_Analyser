@@ -104,5 +104,14 @@ namespace MoodTester
                 Assert.AreEqual("Constructor is not found", e.Message);
             }
         }
+        [TestMethod]
+        public void GivenHappyMessageUsingReflectionWhenProperShouldReturnHappy()
+        {
+            //Arrange
+            //Act
+            string check = MoodAnalyserRefection.InvokeAnalyseMood("HAPPY", "AnalyseMood");
+            //Assert
+            Assert.AreEqual("HAPPY", check);
+        }
     }
 }

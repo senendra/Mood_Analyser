@@ -61,8 +61,8 @@ namespace MyMoodAnalyser
         {
             try
             {
-                Type type = Type.GetType("MoodAnalyserProblem.MoodAnalyser");
-                object moodAnalyserObj = MoodAnalyserRefection.CreateMoodAnalyseUsingParameterizedConstructor("MoodAnalyserProblem.MoodAnalyser", "MoodAnalyser", message);
+                Type type = Type.GetType("MyMoodAnalyser.MoodAnalyser");
+                object moodAnalyserObj = MoodAnalyserRefection.CreateMoodAnalyseUsingParameterizedConstructor("MyMoodAnalyser.MoodAnalyser", "MoodAnalyser", message);
                 MethodInfo methodInfo = type.GetMethod(methodName);
                 object mood = methodInfo.Invoke(moodAnalyserObj, null);
                 return mood.ToString();
