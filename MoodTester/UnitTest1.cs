@@ -113,5 +113,19 @@ namespace MoodTester
             //Assert
             Assert.AreEqual("HAPPY", check);
         }
+        [TestMethod]
+        public void GivenImproperMethodNameShouldThrowMoodAnalysisCustomExceptionIndicatingNo_Such_Method()
+        {
+            try
+            {
+                //Act
+                string actual = MoodAnalyserRefection.InvokeAnalyseMood("HAPPY", "WrongMethodName");
+            }
+            catch (MoodAnalysisCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("no such method.", e.Message);
+            }
+        }
     }
 }
