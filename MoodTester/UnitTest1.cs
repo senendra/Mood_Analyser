@@ -135,5 +135,19 @@ namespace MoodTester
             //Assert
             Assert.AreEqual("HAPPY", actual);
         }
+        [TestMethod]
+        public void GivenImproperFieldNameShouldThrowMoodAnalysisCUstomExceptionIndicatingNoSuchField()
+        {
+            try
+            {
+                //Act
+                string actual = MoodAnalyserRefection.SetField("HAPPY", "wrongName");
+            }
+            catch (MoodAnalysisCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("NO such field found", e.Message);
+            }
+        }
     }
 }
