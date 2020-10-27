@@ -127,5 +127,13 @@ namespace MoodTester
                 Assert.AreEqual("no such method.", e.Message);
             }
         }
+        [TestMethod]
+        public void GivenHappyMessageWithReflectionShouldReturnHappy()
+        {
+            //Act
+            string actual = MoodAnalyserRefection.SetField("HAPPY", "message");
+            //Assert
+            Assert.AreEqual("HAPPY", actual);
+        }
     }
 }
