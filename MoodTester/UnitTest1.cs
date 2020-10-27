@@ -149,5 +149,19 @@ namespace MoodTester
                 Assert.AreEqual("NO such field found", e.Message);
             }
         }
+        [TestMethod]
+        public void GivenNullMessageShouldThrowMoodAnalysisCUstomExceptionIndicatingNullMessage()
+        {
+            try
+            {
+                //Act
+                string actual = MoodAnalyserRefection.SetField( null , "message");
+            }
+            catch (MoodAnalysisCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Message should not be null.", e.Message);
+            }
+        }
     }
 }
