@@ -10,7 +10,8 @@ namespace MyMoodAnalyser
             NULL,
             EMPTY,
             NO_SUCH_CLASS,
-            NO_SUCH_METHOD
+            NO_SUCH_METHOD,
+            NO_SUCH_FIELD
         }
         private readonly ExceptionType type;
         public MoodAnalysisCustomException(ExceptionType type , string message) : base(message)
